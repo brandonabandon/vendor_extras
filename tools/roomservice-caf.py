@@ -150,7 +150,7 @@ def add_to_manifest_dependencies(repositories):
 
         print 'Adding dependency: %s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": repo_name, "revision": "o-caf" })
+            "remote": "github", "name": repo_name, "revision": "o8x-caf" })
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
@@ -186,7 +186,7 @@ def add_to_manifest(repositories):
 
         print 'Adding dependency: ScrewdAOSP/%s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": "ScrewdAOSP/%s" % repo_name, "revision": "o-caf" })
+            "remote": "github", "name": "ScrewdAOSP/%s" % repo_name, "revision": "o8x-caf" })
 
         if 'branch' in repository:
             project.set('revision', repository['branch'])
@@ -246,7 +246,7 @@ else:
 
             repo_path = "device/%s/%s" % (manufacturer, device)
 
-            add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':'o-caf'}])
+            add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':'o8x-caf'}])
 
             print "Syncing repository to retrieve project."
             os.system('repo sync %s' % repo_path)
